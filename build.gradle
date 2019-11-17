@@ -5,12 +5,20 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.8'
 }
 
+group = 'io.github.crucible'
+version = '1.0'
+
 repositories {
     jcenter()
+    maven {
+        name 'forge'
+        url 'http://files.minecraftforge.net/maven/'
+    }
 }
 
 dependencies {
     compile gradleApi()
+    compile 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
     testCompile 'junit:junit:4.12'
 }
 
